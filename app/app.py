@@ -2,6 +2,9 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
+@app.route('/', methods=["GET"])
+def index():
+    return "It works!"
 
 @app.route('/add', methods=["GET"])
 def add():
@@ -28,7 +31,7 @@ def after_request(response):
     response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
     return response
 
-app.run(port=8000)
+app.run(host="0.0.0.0")
 
 
 

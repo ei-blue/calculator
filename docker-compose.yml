@@ -1,0 +1,7 @@
+version: "2"
+services:
+  app:
+    build: ./app
+    container_name: "calc"
+    ports:
+      - "8000:5000"
